@@ -74,9 +74,9 @@ function lengthOfLIS(nums: number[]): number {
     } else {
       let left = 0
       let right = result.length - 1
-      let mid = ( left + right ) >> 1
       while (left < right) {
-        if(nums[i] > nums[mid] ) {
+        let mid = ( left + right ) >> 1
+        if(nums[i] > result[mid] ) {
           left = mid +1
         } else {
           right = mid
@@ -85,9 +85,9 @@ function lengthOfLIS(nums: number[]): number {
       result[left] = nums[i]
     }
   }
-  console.log(result)
+  console.log('----1--',result)
   return result.length
 };
 //leetcode submit region end(Prohibit modification and deletion)
-console.log(lengthOfLIS([0,1,0,3,2,3]))
-console.log(lengthOfLIS([7,7,7,7,7,7,7]))
+// console.log(lengthOfLIS([0,1,0,3,2,3]))
+console.log(lengthOfLIS([10,9,2,5,3,4]))
